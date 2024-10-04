@@ -2,6 +2,6 @@
 #include "figures.h"
 
 void display(){
-  char** cblanco = repeatH(whiteSquare);
+  char** cblanco = repeatH(whiteSquare, 8);
   interpreter(cblanco);
 }
