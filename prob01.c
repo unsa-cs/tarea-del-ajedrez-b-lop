@@ -2,14 +2,22 @@
 #include "figures.h"
 
 void display(){
-  char** cblanco;// = repeatH(whiteSquare, 8);
+  // char** cblanco= repeatH(whiteSquare, 1);
+  // = repeatH(whiteSquare, 8);
+  // char** cnegro;
+
+  char **base;
+
+  base = join(whiteSquare,reverse(whiteSquare));
+  /*
   for (int i = 0 ; i < 8 ; i++){
     if ( i % 2 == 0 ){
-      cblanco = repeatH(whiteSquare, 1);
+      cblanco =
     }
     else{
-      cblanco = repeatH(reverse(whiteSquare), 1);
+      cnegro  = repeatH(reverse(whiteSquare), 1);
     }    
   }
-  interpreter(cblanco);
+  */
+  interpreter(base);
 }
