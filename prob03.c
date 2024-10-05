@@ -2,11 +2,13 @@
 #include "figures.h"
 
 void display(){
-  char **base;
+  char **base_c;
   char **fila;
+  char **base_f;
   char **forma;
-  base = join(whiteSquare,reverse(whiteSquare));
-  fila = repeatH(base, 4);
-  forma = repeatV(fila, 4);
-  interpreter(reverse(forma));
+  base_c = join(whiteSquare,reverse(whiteSquare));
+  fila = repeatH(base_c, 4);
+  base_f = up(reverse(fila), fila); 
+  forma = repeatV(base_f, 2);
+  interpreter(forma);
 }
