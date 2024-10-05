@@ -11,7 +11,7 @@ void display(){
   char **piezasR_Blancas;
   
   char **fila_con_piezas;
-
+  
   piezasR_Blancas = join(rook, knight);
   piezasR_Blancas = join(piezasR_Blancas, bishop);
 
@@ -20,7 +20,7 @@ void display(){
 
   piezas_Blancas = join(piezas_Blancas, flipV(piezasR_Blancas));
 
-  fila_con_piezas = superImpose(reverse(fila), piezas_Blancas);
+  fila_con_piezas = superImpose(piezas_Blancas,reverse(fila));
 
   interpreter(fila_con_piezas);
 }
