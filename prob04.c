@@ -18,7 +18,7 @@ void display(){
   piezas_Blancas = join(piezasR_Blancas, queen);
   piezas_Blancas = join(piezas_Blancas, king);
 
-  piezas_Blancas = join(piezas_Blancas, flipV(piezasR_Blancas));
+  piezas_Blancas = join(piezas_Blancas, flipV(rotateL(piezasR_Blancas)));
 
   fila_con_piezas = superImpose(piezas_Blancas,reverse(fila));
 
