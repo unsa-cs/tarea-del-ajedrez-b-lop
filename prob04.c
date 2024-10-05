@@ -9,6 +9,8 @@ void display(){
 
   char **piezas_Blancas;
   char **piezasR_Blancas;
+  
+  char **fila_con_piezas;
 
   piezasR_Blancas = join(rook, knight);
   piezasR_Blancas = join(piezasR_Blancas, bishop);
@@ -16,7 +18,9 @@ void display(){
   piezas_Blancas = join(piezasR_Blancas, queen);
   piezas_Blancas = join(piezas_Blancas, king);
 
-  piezas_Blancas = join(piezas_Blancas, flipH(piezasR_Blancas));
+  piezas_Blancas = join(piezas_Blancas, flipV(piezasR_Blancas));
 
-  interpreter(piezas_Blancas);
+  fila_con_piezas = superImpose(reverse(fila), piezas_Blancas);
+
+  interpreter(fila_con_piezas);
 }
