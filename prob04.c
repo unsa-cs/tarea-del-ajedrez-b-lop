@@ -8,17 +8,17 @@ void display(){
   fila = repeatH(base_C, 4);
 
   char **piezas_Blancas;
-  char **piezasR_Blancas;
   
   char **fila_con_piezas;
   
-  piezasR_Blancas = join(rook, knight);
-  piezasR_Blancas = join(piezasR_Blancas, bishop);
+  piezas_Blancas = join(rook, knight);
+  piezas_Blancas = join(piezas_Blancas, bishop);
 
-  piezas_Blancas = join(piezasR_Blancas, queen);
+  piezas_Blancas = join(piezas_Blancas, queen);
   piezas_Blancas = join(piezas_Blancas, king);
-
-  piezas_Blancas = join(piezas_Blancas, flipV(rotateL(piezasR_Blancas)));
+  piezas_Blancas = join(piezas_Blancas, bishop);
+  piezas_Blancas = join(piezas_Blancas, knight);
+  piezas_Blancas = join(piezas_Blancas, rook);
 
   fila_con_piezas = superImpose(piezas_Blancas,reverse(fila));
 
