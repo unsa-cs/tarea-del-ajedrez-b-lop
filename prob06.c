@@ -36,7 +36,7 @@ void display(){
   fila_peones = repeatH(pawn, 8);
   fila_peones = superImpose(fila_peones,fila);
 
-  tablero = up(tablero, fila_peones);
+  tablero = fila_peones;
 
   tablero = up(tablero, repeatV(base_f, 2));
 
