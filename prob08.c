@@ -8,7 +8,7 @@ void display(){
   char **blackSquare = reverse(whiteSquare);
   
   int pos[8] = {4,1,3,6,2,7,5,0};
-  
+
   for(int i=0;i<8;i++){
     if( i%2 == 0 ){
       for(int j=0;j<8;j++){
@@ -54,7 +54,13 @@ void display(){
         }
       }
     }
+    if (i == 0){
+      tablero = fila[i];
+    }
+    else{
+      tablero = up(tablero, fila[i]);
+    }
   }
   
-  interpreter(fila[0]);
+  interpreter(tablero);
 }
