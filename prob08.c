@@ -21,8 +21,11 @@ void display(){
         else if(pos[i]==j){
           fila[i]=join(fila[i],superImpose(queen,whiteSquare));
         }
+        else if(j==0){
+          fila[i]=whiteSquare;
+        }
         else if(j%2==0){
-          fila[i]=join(fila[i],whiteSquare);
+          fila[i]=join(fila[i], whiteSquare);
         }
         else{
           fila[i]=join(fila[i],blackSquare);
@@ -39,6 +42,9 @@ void display(){
         }
         else if(pos[i]==j){
           fila[i]=join(fila[i],superImpose(queen,blackSquare));
+        }
+        else if(j==0){
+          fila[i]=blackSquare;
         }
         else if(j%2==0){
           fila[i]=join(fila[i],blackSquare);
