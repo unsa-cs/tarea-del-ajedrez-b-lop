@@ -18,25 +18,20 @@ void display(){
   char **piezas[8] = {rook, knight, bishop, queen, king, bishop, knight, rook};
 
   for (int i = 0 ; i < 7 ; i++){
-    piezas_Blancas = join(piezas[i], piezas[i+1]);
+    if( i ==0 ){
+      piezas_Blancas = join(piezas[i], piezas[i+1]);
+    }
+    else{
+      piezas_Blancas = join(piezas_Blancas,piezas[i+1]);
+    }
   }
-
-  /*
-  piezas_Blancas = join(rook, knight);
-  piezas_Blancas = join(piezas_Blancas, bishop);
-  piezas_Blancas = join(piezas_Blancas, queen);
-  piezas_Blancas = join(piezas_Blancas, king);
-  piezas_Blancas = join(piezas_Blancas, bishop);
-  piezas_Blancas = join(piezas_Blancas, knight);
-  piezas_Blancas = join(piezas_Blancas, rook);
-  */
 
   fila_con_piezas = superImpose(piezas_Blancas,reverse(fila));
   
   fila_peones = repeatH(pawn, 8);
   fila_peones = superImpose(fila_peones,fila);
 
-  tablero = fila_peones;
+  tablero = up(fila_con_piezas,fila_peones);
 
   tablero = up(tablero, repeatV(base_f, 2));
 
