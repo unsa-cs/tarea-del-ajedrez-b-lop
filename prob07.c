@@ -4,7 +4,8 @@
 void display(){
   char **cuadrante[4];
   char **fila[4];
-  
+  char **tablero;  
+
   fila[0] = repeatH(reverse(whiteSquare), 4);
   fila[1] = join(reverse(whiteSquare),repeatH(whiteSquare, 3));
   fila[2] = join(reverse(whiteSquare), whiteSquare);
@@ -21,6 +22,13 @@ void display(){
       cuadrante[0] = up(cuadrante[0], fila[i+1]);
     }
   }
-    
-  interpreter(cuadrante[0]);
+
+  for (int i = 0; i < 3 ; i++){
+    cuadrante[i+1] = rotateR(cuadrante[i]);
+  }
+
+  tablero = join(cuadrante[0], cuadrante[1]);
+  tablero = up(tablero, join(cuadrante[3], cuadrante[2]));
+
+  interpreter(tablero);
 }
