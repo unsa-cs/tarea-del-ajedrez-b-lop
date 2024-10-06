@@ -10,7 +10,8 @@ void display(){
   fila[2] = join(reverse(whiteSquare), whiteSquare);
   fila[2] = join(fila[2], repeatH(reverse(whiteSquare), 2));
   fila[3] = join(reverse(whiteSquare), whiteSquare);
-  fila[3] = repeatH(fila[3], 2);
+  fila[3] = join(fila[3], reverse(whiteSquare));
+  fila[3] = join(fila[3], superImpose(knight, whiteSquare));
   
   for(int i = 0; i < 3; i++){
     if( i == 0){
