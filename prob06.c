@@ -33,6 +33,8 @@ void display(){
 
   fila_con_piezas = up(fila_con_piezas, reverse(fila));
   fila_con_piezas = up(fila_con_piezas, fila);
+  fila_con_piezas = up(fila_con_piezas, reverse(superImpose(fila_peones, fila)));
+  fila_con_piezas = up(fila_con_piezas, superImpose(reverse(piezas_Blancas),fila));
   
   interpreter(fila_con_piezas);
 }
